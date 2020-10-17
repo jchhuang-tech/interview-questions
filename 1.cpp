@@ -6,7 +6,7 @@ public:
         for(int i=0; i<nums.size(); i++){
             int comp = target - nums[i];
             std::unordered_map<int,int>::const_iterator got = umap.find(comp);
-            if(got != umap.end() && got->second != i){
+            if(got != umap.end()){
                 output.push_back(got->second);
                 output.push_back(i);
                 return output;
