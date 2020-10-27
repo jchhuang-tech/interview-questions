@@ -3,6 +3,7 @@ class Solution {
         boolean[] prime = new boolean[n];
         Arrays.fill(prime, true);
         for(int i=2; i<(n+1)/2; i++){
+            if(!prime[i]) continue;
             for(int j=2*i; j<n; j+=i){
                 prime[j] = false;
             }
@@ -12,7 +13,7 @@ class Solution {
             if(prime[i] == true) {
                 count++;
             }
-        }
+        }a
         return count;
     }
 }
