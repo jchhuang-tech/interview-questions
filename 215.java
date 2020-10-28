@@ -15,10 +15,11 @@ class Solution {
         }
     }
     public int partition(int[] nums, int start, int end){
+        swap(nums, (start+end)/2, end); //choose a random pivot
         int pivot = nums[end];
         int i = start-1;
         for (int j=start; j<end; j++){
-            if(nums[j] > pivot){
+            if(nums[j] > pivot){ //put the larger elements at the front
                 i++;
                 swap(nums, i, j);
             }
