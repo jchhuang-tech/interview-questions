@@ -1,12 +1,20 @@
-
-// brute force
+// binary search
 class Solution {
     public int mySqrt(int x) {
-        for (long i=0; i*i<=x; i++){
-            if (i*i <= x && (i+1)*(i+1) > x){
-                return (int)i;
+        if (x < 2) return x;
+        int left = 1;
+        int right = x;
+        while(left < right){
+            if(left == right-1)return left;
+            int mid = (right+left)/2;
+            if (mid > x/mid){ // in the left
+                right = mid;
+            } else if (mid < x/mid) { // in the right
+                left = mid;
+            } else {
+                return mid;
             }
         }
-        return 0;
+        return left;
     }
 }
